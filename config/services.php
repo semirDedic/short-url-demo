@@ -31,4 +31,10 @@ return [
         ],
     ],
 
+    'google' => [
+        'url' => 'https://safebrowsing.googleapis.com/v4/threatMatches',
+        'url_prefix' => ':find?key=',
+        'key' => env('GOOGLE_API_KEY'),
+    ],
+
 ];
