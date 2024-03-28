@@ -36,30 +36,40 @@ Technologies used in this project:
 2. Install the dependencies and devDependencies:
 
 ```sh
-$ cd short-url-demo
-$ composer install
-$ npm install
-$ npm run dev
+cd short-url-demo
+```
+```
+composer install
+```
+```
+npm install
+```
+```
+npm run dev
 ```
 
 3. Create your .env file and generate the application key:
 
 ```sh
-$ cp .env.example .env
-$ php artisan key:generate
+cp .env.example .env
+```
+```sh
+php artisan key:generate
 ```
 
 4. Copy your API key from PLACEKIT and place it in your .env file:
 
-```sh
+```
 GOOGLE_API_KEY=set_key_here
 ```
 
 5. Run migrations (mysql table name "demo_short_url") and start the server:
 
 ```sh
-$ php artisan migrate
-$ php artisan serve
+php artisan migrate
+```
+```sh
+php artisan serve
 ```
 
 ### Tests
