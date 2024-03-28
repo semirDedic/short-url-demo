@@ -14,7 +14,7 @@ Technologies used in this project:
 * [Laravel](https://github.com/laravel/laravel) - The Laravel PHP framework.
 * [Vue.js](https://github.com/vuejs) - Vue.js.
 * [Tailwind CSS](https://tailwindcss.com/) - Tailwind CSS.
-* [Inertia.js](hhttps://github.com/inertiajs) - Inertia.js.
+* [Inertia.js](https://github.com/inertiajs) - Inertia.js.
 * [Google Safe Browsing API](https://developers.google.com/safe-browsing/v4) - Google Safe Browsing API.
 
 
