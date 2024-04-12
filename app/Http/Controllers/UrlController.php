@@ -12,6 +12,10 @@ use Inertia\Inertia;
 
 class UrlController extends Controller
 {
+    public function __construct(
+        protected Url $urls,
+    ) {
+    }
 
     public function index()
     {
@@ -35,9 +39,9 @@ class UrlController extends Controller
             }
 
             // create hash and strip string to 6 characters
-            $hash = substr(hash('sha256', $originalUrl), 0, 6);
+            $hash = $this->urls->generateUniqueHash($originalUrl);
 
-            $url = Url::firstOrNew(
+            $url = $this->urls->firstOrNew(
                 ['original_url' => $originalUrl],
                 [
                     'hashed_url' => $hash,
@@ -71,7 +75,7 @@ class UrlController extends Controller
     public function redirectToRealUrl($hash): RedirectResponse
     {
         // Get the Original URL on the basis of Hash.
-        $url = Url::where('hashed_url', $hash)->first();
+        $url = $this->urls->where('hashed_url', $hash)->first();
 
         if (!$url) {
             return to_route('welcome')

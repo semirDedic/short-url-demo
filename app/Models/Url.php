@@ -15,4 +15,8 @@ class Url extends Model
      * @var array
      */
     protected $fillable = ['original_url', 'hashed_url', 'expires_at', 'clicks'];
+
+    static public function generateUniqueHash($originalUrl) : string {
+        return substr(hash('sha256', $originalUrl), 0, 6);
+    }
 }
